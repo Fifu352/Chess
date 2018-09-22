@@ -5,6 +5,7 @@
       <mapping ext="kv" type="Native" />
       <mapping pattern="pong,kv" type="PLAIN_TEXT" />
       <mapping pattern="King.py" type="PLAIN_TEXT" />
+      <mapping pattern="main_file" type="Python" />
     </extensionMap>
   </component>
 </application>
