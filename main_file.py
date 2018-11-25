@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import *
+import os
 
 
 
@@ -94,10 +95,11 @@ class King():
             self.check=0
 
             if color == 'White':
-                self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\w_king.png")
+
+                self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/w_king.png")
                 self.position=[0,4]
             elif color=="Black":
-                self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\b_king.png")
+                self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/b_king.png")
                 self.position=[7,4]
         def place(self):
             self.label = Label(root,image=self.photo,font = "Times 12 bold", fg = self.color, bg= conf[self.position[0]][self.position[1]][1])
@@ -434,10 +436,10 @@ class Queen():
         self.moves = 0
 
         if color == 'White':
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\w_queen.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/w_queen.png")
             self.position = [0, 3]
         elif color == "Black":
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\b_queen.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/b_queen.png")
             self.position = [7, 3]
 
     def place(self):
@@ -716,13 +718,13 @@ class Bishop():
         self.moves = 0
 
         if color == 'White':
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\w_bishop.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/w_bishop.png")
             if  conf[0][2][2] == True:
                 self.position = [0, 2]
             else:
                 self.position = [0, 5]
         elif color == "Black":
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\b_bishop.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/b_bishop.png")
             if  conf[7][2][2] == True:
                 self.position = [7, 2]
             else:
@@ -952,13 +954,13 @@ class Knight():
         self.moves = 0
 
         if color == 'White':
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\w_knight.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/w_knight.png")
             if  conf[0][1][2] == True:
                 self.position = [0, 1]
             else:
                 self.position = [0, 6]
         elif color == "Black":
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\b_knight.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/b_knight.png")
             if  conf[7][1][2] == True:
                 self.position = [7, 1]
             else:
@@ -1205,13 +1207,13 @@ class Rook():
 
 
         if color == 'White':
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\w_rook.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/w_rook.png")
             if  conf[0][0][2] == True:
                 self.position = [0, 0]
             else:
                 self.position = [0, 7]
         elif color == "Black":
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\b_rook.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/b_rook.png")
             if  conf[7][0][2] == True:
                 self.position = [7, 0]
             else:
@@ -1424,11 +1426,11 @@ class Pawn():
 
         if color == 'White':
             self.position = [1, i]
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\w_pawn.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/w_pawn.png")
 
         elif color == "Black":
             self.position = [6, i]
-            self.photo = tk.PhotoImage(file=r"C:\Users\Fifu\Documents\Chess\icons\b_pawn.png")
+            self.photo = tk.PhotoImage(file=os.path.dirname(__file__)+ "/icons/b_pawn.png")
     def place(self):
         self.label = Label(root, image=self.photo, font="Times 12 bold", fg=self.color,
                            bg=conf[self.position[0]][self.position[1]][1])
